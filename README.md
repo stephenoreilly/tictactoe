@@ -6,3 +6,4 @@ Technologies to be used
 - React with some sort of bootstrapping
 - Testing with jest and enzyme
 - Using Graphcool to supply the GraphQL Backend
+- Will use Relay Modern
