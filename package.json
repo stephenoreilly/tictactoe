@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "1.0.11"
+    "babel-plugin-relay": "^1.1.0",
+    "react-scripts": "1.0.11",
+    "relay-compiler": "^1.1.0"
   },
   "dependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-relay": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
