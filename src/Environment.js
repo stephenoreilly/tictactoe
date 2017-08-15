@@ -1,4 +1,4 @@
-// 1
+import constants from './constants'
 const {
   Environment,
   Network,
@@ -12,7 +12,7 @@ const store = new Store(new RecordSource())
 // 3
 const network = Network.create((operation, variables) => {
   // 4
-  return fetch('https://api.graph.cool/relay/v1/cj6avhff2034g0158pvez7tg8', {
+  return fetch(constants.graphcool_relay_api, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

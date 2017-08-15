@@ -22,3 +22,4 @@ yarn-error.log*
 
 project.graphcool
 schema.graphql
+src/constants.js

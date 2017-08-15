@@ -1,0 +1,8 @@
+{
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "default": "https://api.graph.cool/relay/v1/cj6cn941u21x001016nio22ys"
+    }
+  }
+}
