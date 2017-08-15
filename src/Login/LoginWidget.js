@@ -51,7 +51,6 @@ class LoginWidget extends React.Component {
             {LoginForm("Log In")}
           </Tab>
         </Tabs>
-
       </Paper>
     )
   }
