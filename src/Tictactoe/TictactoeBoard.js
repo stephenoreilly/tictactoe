@@ -8,7 +8,11 @@ const styles = {
   gridList: {
     width: 300,
     height: 300,
+    padding: 20,
   },
+  paddedArea: {
+    padding: 20,
+  }
 };
 
 class TictactoeBoard extends React.Component {
@@ -23,12 +27,15 @@ class TictactoeBoard extends React.Component {
       os: [],
       winner: null,
     }
+    this.numberOfXWins = 0
+    this.numberOfOWins = 0
     this.winningArrays = [[1,2,3],[1,4,7],[4,5,6],[2,5,8],[7,8,9],[3,6,9],[1,5,9],[3,5,7]]
   }
 
   checkForWinner(arr, winner) {
     each(this.winningArrays, (winArr) => {
       if(arr.length - difference(arr, winArr).length === 3) {
+        (winner === "X's") ? this.numberOfXWins++ : this.numberOfOWins++
         this.setState({winner})
       }
     })
@@ -82,16 +89,30 @@ class TictactoeBoard extends React.Component {
     })
   }
 
+  buttonLabel() {
+    if (this.state.winner) {
+      return `Congrats ${this.state.winner}! (click here for another game)`
+    } else {
+      return 'Reset'
+    }
+  }
+
   render() {
     return(
       <div>
         <GridList style={styles.gridList} cols={3} padding={0} cellHeight={100}>
           {this.squares()}
         </GridList>
-        { this.state.winner &&
-          <div>{'Congrats'} {this.state.winner}</div>
-        }
-        <RaisedButton onClick={this.clearState.bind(this)} label={'Reset'} />
+        <div style={styles.paddedArea}>
+          <div>
+            {`O: ${this.numberOfOWins}\tX: ${this.numberOfXWins}`}
+          </div>
+          <RaisedButton
+            primary={!!this.state.winner}
+            secondary={!this.state.winner}
+            onClick={this.clearState.bind(this)}
+            label={this.buttonLabel()} />
+          </div>
       </div>
     )
   }

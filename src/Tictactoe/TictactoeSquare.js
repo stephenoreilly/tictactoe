@@ -8,10 +8,10 @@ const styles = (number) => {
     fontSize: '2em'
   }
   if ([1,2,3,4,5,6].includes(number)){
-    style['borderBottom'] = '1px black solid'
+    style['borderBottom'] = '1px #ccc solid'
   }
   if([1,2,4,5,7,8].includes(number)){
-    style['borderRight'] = '1px black solid'
+    style['borderRight'] = '1px #ccc solid'
   }
   return style
 }
