@@ -21,8 +21,9 @@ class TictactoeSquare extends React.Component {
     return(
       <GridTile
         style={styles(this.props.number)}
+        onClick={this.props.squareClick}
       >
-        {'x'}
+        <i className="material-icons">{this.props.value}</i>
       </GridTile>
     )
   }
